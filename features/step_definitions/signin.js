@@ -1,7 +1,9 @@
 const {Given, Then, When, And} = require('cucumber');
 const assert = require('assert');
-let LoginPage = require('../../pageobjects/login.js');
-let loginPage = new LoginPage()
+let LoginPage = require('../../pageobjects/login_page.js');
+let loginPage = new LoginPage();
+let ProductPage = require('../../pageobjects/product_page');
+let product_page = new ProductPage();
 
 Given('I am in landing page', async function () {
     await browser.url(browser.options.baseUrl);
@@ -27,4 +29,11 @@ Then('I am logged in', async function() {
     let products = await $('.product_label')
     products = await products.getText()
     assert.equal("Products", products)
+})
+
+When('I sort by {string}', async function(visibleText) {
+    product_page.sortProducts(visibleText)
+    // await product_page.addItem('Sauce Labs Fleece Jacket')
+    // await product_page.goToCart()
+    // await new Promise(resolve => setTimeout(resolve, 10000));
 })
