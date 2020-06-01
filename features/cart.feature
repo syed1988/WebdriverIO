@@ -1,5 +1,4 @@
-Feature: Happy Paths
-   As a customer I want to be able to sign in, add items, remove items and checkout.
+Feature: Cart
 
 Background: 
     Given I am in landing page
@@ -14,8 +13,3 @@ Scenario: Items are viewable in cart
     And  I navigate to shopping cart
     Then I see 'Sauce Labs Fleece Jacket' in the cart
     And  I see 'Sauce Labs Bike Light' in the cart
-
-# Scenario: Users can checkout
-#     When I add 'Sauce Labs Fleece Jacket' to cart
-
-    

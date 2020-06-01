@@ -9,6 +9,10 @@ When('I add {string} to cart', async function(itemName) {
     await product_page.addItem(itemName)
 })
 
+When('I add {string} with a price of {string} to cart', async function(itemName, price) {
+    await product_page.addItem(itemName)
+})
+
 When('I navigate to shopping cart', async function() {
     await product_page.goToCart()
 })

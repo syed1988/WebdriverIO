@@ -7,7 +7,6 @@ let product_page = new ProductPage();
 
 Given('I am in landing page', async function () {
     await browser.url(browser.options.baseUrl);
-    // await new Promise(resolve => setTimeout(resolve, 5000));
 });
 
 When('I enter {string} as my username', async function(username) {
@@ -33,7 +32,8 @@ Then('I am logged in', async function() {
 
 When('I sort by {string}', async function(visibleText) {
     product_page.sortProducts(visibleText)
-    // await product_page.addItem('Sauce Labs Fleece Jacket')
-    // await product_page.goToCart()
-    // await new Promise(resolve => setTimeout(resolve, 10000));
+})
+
+When('I pause for {int} milliseconds', async function(milliseconds) {
+    await new Promise(resolve => setTimeout(resolve, milliseconds));
 })
